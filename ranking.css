@@ -1,0 +1,149 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #f5d742;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.ranking-header {
+    display: grid;
+    grid-template-columns: 50px 2fr 1fr 2fr;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ranking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.player {
+    display: grid;
+    grid-template-columns: 50px 2fr 1fr 2fr;
+    align-items: center;
+    padding: 12px 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.rank {
+    text-align: center;
+    font-weight: bold;
+}
+
+.player:nth-child(1) .rank {
+    color: gold;
+    font-size: 1.2rem;
+}
+
+.player:nth-child(2) .rank {
+    color: silver;
+}
+
+.player:nth-child(3) .rank {
+    color: #cd7f32;
+}
+
+.points {
+    text-align: center;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.refresh-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.back-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.loading,
+.error {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsivo para smartphones */
+@media (max-width: 600px) {
+    .ranking-header,
+    .player {
+        grid-template-columns: 40px 2fr 1fr;
+    }
+
+    .course {
+        display: none;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* Responsivo para tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+    .ranking-header,
+    .player {
+        grid-template-columns: 40px 2fr 1fr 1.5fr;
+    }
+
+    .course {
+        font-size: 0.9rem;
+    }
+}
+
+/* PCs e notebooks */
+@media (min-width: 901px) {
+    .ranking-header,
+    .player {
+        grid-template-columns: 50px 2fr 1fr 2fr;
+    }
+}

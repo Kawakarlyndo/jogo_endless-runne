@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP 20 - Ranking Cube Runner</title>
+    <link rel="stylesheet" href="ranking.css">
+    <!-- SDKs do Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TOP 20 MELHORES JOGADORES</h1>
+        </header>
+        
+        <div class="ranking-header">
+            <span class="rank">#</span>
+            <span class="name">JOGADOR</span>
+            <span class="points">PONTOS</span>
+            <span class="course">CURSO</span>
+        </div>
+        
+        <div id="ranking-list" class="ranking-list">
+            <div class="loading">Carregando ranking...</div>
+        </div>
+        
+        <div class="buttons">
+            <button id="refresh-btn" class="refresh-btn">🔄 Atualizar</button>
+            <button id="back-btn" class="back-btn">← Voltar</button>
+        </div>
+    </div>
+
+    <!-- Scripts na ordem correta -->
+    <script src="firebase-config.js"></script>
+    <script src="pontuacao.js"></script>
+</body>
+</html>

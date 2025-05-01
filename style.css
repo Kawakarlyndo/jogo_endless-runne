@@ -1,0 +1,255 @@
+body {
+    margin: 0;
+    padding: 0;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    background-color: #222;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    overflow: hidden;
+}
+
+#player {
+    position: absolute;
+    width: 15vw;
+    height: 15vw;
+    background-color: transparent;
+    bottom: 25vh;
+    left: 15vw;
+    z-index: 10;
+    border-radius: 100%;
+}
+
+.obstacle {
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
+    bottom: 25vh;
+    right: -20vw;
+    z-index: 5;
+    border-radius: 2vw;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#score {
+    position: absolute;
+    top: 5vh;
+    right: 5vw;
+    color: white;
+    font-size: 6vw;
+    z-index: 20;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#game-over, #start-screen, #register-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 8vw;
+    text-align: center;
+    z-index: 30;
+}
+
+#game-over span, #start-screen span, #register-screen span {
+    font-size: 5vw;
+    margin-top: 5vh;
+    color: #ccc;
+}
+
+#start-screen {
+    display: flex;
+}
+
+#game-over, #register-screen {
+    display: none;
+}
+
+.controls-info {
+    position: absolute;
+    bottom: 5vh;
+    width: 100%;
+    text-align: center;
+    color: #aaa;
+    font-size: 4vw;
+}
+
+.gif-background {
+    width: 300px;
+    height: 200px;
+    background-image: url('./img/na.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.register-form {
+    width: 80%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 4vw;
+}
+
+.register-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    font-size: 4vw;
+    cursor: pointer;
+    width: 100%;
+}
+
+.register-form button.close-btn {
+    background-color: #f44336;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.menu-btn {
+    display: block;
+    margin: 15px auto;
+    padding: 12px 25px;
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Responsividade completa */
+
+/* Player e Obstáculos com tamanhos limitados */
+#player {
+    width: clamp(60px, 15vw, 120px);
+    height: clamp(60px, 15vw, 120px);
+}
+
+.obstacle {
+    width: clamp(40px, 10vw, 80px);
+    height: clamp(40px, 10vw, 80px);
+}
+
+/* Corrige problemas de rolagem */
+body {
+    position: relative; /* Alterado de fixed para relative */
+    width: 100%;
+    height: 100%;
+}
+
+/* Botões responsivos */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Telas pequenas (celulares) */
+@media (max-width: 600px) {
+    #score {
+        font-size: 8vw;
+    }
+
+    .register-form input,
+    .register-form button {
+        font-size: 5vw;
+    }
+
+    .controls-info {
+        font-size: 5vw;
+    }
+
+    #game-over, #start-screen, #register-screen {
+        font-size: 9vw;
+    }
+
+    #game-over span, #start-screen span, #register-screen span {
+        font-size: 6vw;
+    }
+}
+
+/* Telas médias (tablets e notebooks pequenos) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    #score {
+        font-size: 4vw;
+    }
+
+    .register-form input,
+    .register-form button {
+        font-size: 3vw;
+    }
+
+    .controls-info {
+        font-size: 3vw;
+    }
+
+    #game-over, #start-screen, #register-screen {
+        font-size: 6vw;
+    }
+
+    #game-over span, #start-screen span, #register-screen span {
+        font-size: 4vw;
+    }
+}
+
+/* Telas grandes (desktops) */
+@media (min-width: 1025px) {
+    #score {
+        font-size: 2vw;
+    }
+
+    .register-form input,
+    .register-form button {
+        font-size: 1.2vw;
+    }
+
+    .controls-info {
+        font-size: 1vw;
+    }
+
+    #game-over, #start-screen, #register-screen {
+        font-size: 3vw;
+    }
+
+    #game-over span, #start-screen span, #register-screen span {
+        font-size: 2vw;
+    }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cube Runner Mobile</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+</head>
+<body>
+    <div id="game-container">
+        <div id="player" class="gif-background"></div>
+        <div id="obstacles"></div>
+        <div id="score">0</div>
+        <div id="game-over">
+            NAROTO NÃO SE CONTEVE<br>
+            <span>Toque para recomeçar</span>
+        </div>
+        <div id="start-screen">
+            CUBEruto<br>
+            <span>Não quebre a dieta 🫡</span>
+            <div class="controls-info">Toque para começar</div>
+        </div>
+        <div id="register-screen">
+            <h2>Registro</h2>
+            <div class="register-form">
+                <input type="text" id="player-name" placeholder="Seu nome" required>
+                <input type="text" id="course-name" placeholder="Nome do curso" required>
+                <div class="button-group">
+                    <button id="register-btn">Prosseguir</button>
+                    <button class="close-btn" id="close-register">Fechar</button>
+                    
+                    <button id="ranking-btn" class="menu-btn">Ver Ranking</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="firebase-config.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
